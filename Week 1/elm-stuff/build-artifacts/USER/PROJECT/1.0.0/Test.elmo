@@ -1,0 +1,23 @@
+Elm.Test = Elm.Test || {};
+Elm.Test.make = function (_elm) {
+   "use strict";
+   _elm.Test = _elm.Test || {};
+   if (_elm.Test.values)
+   return _elm.Test.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Test",
+   $Basics = Elm.Basics.make(_elm),
+   $FP = Elm.FP.make(_elm),
+   $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var main = $Graphics$Element.show($FP.digitsOfInt(15231253));
+   _elm.Test.values = {_op: _op
+                      ,main: main};
+   return _elm.Test.values;
+};

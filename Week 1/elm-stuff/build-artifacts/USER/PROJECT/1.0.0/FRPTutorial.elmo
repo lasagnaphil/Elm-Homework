@@ -1,0 +1,36 @@
+Elm.FRPTutorial = Elm.FRPTutorial || {};
+Elm.FRPTutorial.make = function (_elm) {
+   "use strict";
+   _elm.FRPTutorial = _elm.FRPTutorial || {};
+   if (_elm.FRPTutorial.values)
+   return _elm.FRPTutorial.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "FRPTutorial",
+   $Basics = Elm.Basics.make(_elm),
+   $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Time = Elm.Time.make(_elm);
+   var step = F2(function (_v0,i) {
+      return function () {
+         return i + 1;
+      }();
+   });
+   var initState = 0;
+   var main = A2($Signal._op["<~"],
+   $Graphics$Element.show,
+   A3($Signal.foldp,
+   step,
+   initState,
+   $Time.every($Time.second)));
+   _elm.FRPTutorial.values = {_op: _op
+                             ,initState: initState
+                             ,step: step
+                             ,main: main};
+   return _elm.FRPTutorial.values;
+};

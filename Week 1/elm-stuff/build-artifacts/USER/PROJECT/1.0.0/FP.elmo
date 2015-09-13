@@ -1,0 +1,67 @@
+Elm.FP = Elm.FP || {};
+Elm.FP.make = function (_elm) {
+   "use strict";
+   _elm.FP = _elm.FP || {};
+   if (_elm.FP.values)
+   return _elm.FP.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "FP",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var take = F2(function (n,lst) {
+      return _U.cmp(n,
+      0) < 0 ? $Result.Err("negative index") : _U.cmp($List.length(lst),
+      n) < 0 ? $Result.Err("not enough elements") : $Result.Ok(A2($List.take,
+      n,
+      lst));
+   });
+   var digitsOfInt = function (n) {
+      return function () {
+         var digitsOfInt$ = F2(function (n,
+         acc) {
+            return _U.eq(n,
+            0) ? acc : A2(digitsOfInt$,
+            n / 10 | 0,
+            A2($List._op["::"],
+            A2($Basics._op["%"],n,10),
+            acc));
+         });
+         return A2(digitsOfInt$,
+         n,
+         _L.fromArray([]));
+      }();
+   };
+   var digitAdder = function (n) {
+      return function () {
+         var digitAdder$ = F2(function (n,
+         trials) {
+            return _U.cmp(n,
+            10) < 0 ? {ctor: "_Tuple2"
+                      ,_0: n
+                      ,_1: trials} : A2(digitAdder$,
+            $List.sum(digitsOfInt(n)),
+            trials + 1);
+         });
+         return A2(digitAdder$,n,0);
+      }();
+   };
+   var additivePersistence = function (n) {
+      return $Basics.snd(digitAdder(n));
+   };
+   var digitalRoot = function (n) {
+      return $Basics.fst(digitAdder(n));
+   };
+   _elm.FP.values = {_op: _op
+                    ,digitsOfInt: digitsOfInt
+                    ,digitAdder: digitAdder
+                    ,additivePersistence: additivePersistence
+                    ,digitalRoot: digitalRoot
+                    ,take: take};
+   return _elm.FP.values;
+};

@@ -1,0 +1,435 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"show",
+				"showsignals"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Pi.elm",
+			"settings":
+			{
+				"buffer_size": 587,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++11/C++11.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Kulture/ASP.NET.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Kulture/ASP.NET.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Lua Love/Lua Love/LuaLove.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/Lua Love/LuaLove.sublime-build",
+					"Love2D"
+				],
+				[
+					"Packages/Lua Love/Lua Love/LuaLove.sublime-build",
+					"ldoc: File"
+				],
+				[
+					"Packages/Lua Love/Lua Love/LuaLove.sublime-build",
+					"ldoc: Project"
+				]
+			],
+			[
+				"Packages/Lua Love/Lua Love/LuaLove.sublime-build",
+				"Love2D"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Love2D"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: File"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: Project"
+				]
+			],
+			[
+				"Packages/Lua Love/LuaLove.sublime-build",
+				"Love2D"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 167.0,
+		"last_filter": "instal",
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packcage",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"bulid",
+				"Build With: LuaLove - Love2D"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 448.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/phillipchang/Desktop/Elm/Homework/Week 1",
+		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/build"
+	],
+	"file_history":
+	[
+		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/FP.elm",
+		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/test.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/Fibonacci.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/FibonacciBars.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/tutorial.sublime-project",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/elm-package.json",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/src/Fibonacci.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/elm.js",
+		"/Users/phillipchang/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/phillipchang/Elm/build/test.html",
+		"/Users/phillipchang/Elm/repl.elm",
+		"/Users/phillipchang/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/phillipchang/Library/Application Support/Sublime Text 3/Settings/SideBarEnhancements.json",
+		"/Users/phillipchang/Elm/elm.sublime-project",
+		"/Users/phillipchang/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/phillipchang/Desktop/C++/SFMLTest_g++/main.cpp",
+		"/Users/phillipchang/Beat-It/Assets/NoteMover.cs",
+		"/Users/phillipchang/Desktop/surfacetension.m",
+		"/Users/phillipchang/SFML/Thor-2.0/cmake/Modules/FindSFML.cmake",
+		"/Users/phillipchang/SFML/SFML-2.3.1/cmake/Macros.cmake",
+		"/Users/phillipchang/SFML/SFML-2.3.1/cmake/Config.cmake",
+		"/Users/phillipchang/Beat-It/Assets/GamePrefabs/Select Scene/SkillImage.prefab",
+		"/Users/phillipchang/Beat-It/beatit.sublime-project",
+		"/Users/phillipchang/Beat-It/Assets/UI/PlayerDB.cs",
+		"/Users/phillipchang/",
+		"/Users/phillipchang/Beat-It/Assets/Note.cs",
+		"/Users/phillipchang/unityargs.sh",
+		"/Users/phillipchang/Downloads/download.php",
+		"/Users/phillipchang/B-D/tutorialData.json",
+		"/Users/phillipchang/Downloads/B-D-master-2/Assets/tutorialData.json",
+		"/Users/phillipchang/B-D/Assets/data.txt",
+		"/Users/phillipchang/B-D/Assets/sceneData.json",
+		"/Users/phillipchang/GitHub/BeatItEditor/main.lua",
+		"/Users/phillipchang/Desktop/C++/test/main.cpp"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Visibility",
+			"type",
+			"sfml_root",
+			"xcode",
+			"templates",
+			"xcode",
+			"template",
+			"tempalte",
+			"rect"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Pi.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								298,
+								298
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 25.0
+	},
+	"pinned_build_system": "",
+	"project": "week1.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Elm/test.elm"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
