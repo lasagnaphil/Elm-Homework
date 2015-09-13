@@ -15,8 +15,16 @@
 			"file": "Pi.elm",
 			"settings":
 			{
-				"buffer_size": 587,
-				"line_ending": "Unix"
+				"buffer_size": 1824,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test.elm",
+			"settings":
+			{
+				"buffer_size": 192,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -52,6 +60,22 @@
 			],
 			[
 				"Packages/C++11/C++11.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
 				"Run"
 			]
 		],
@@ -152,27 +176,31 @@
 			]
 		]
 	],
-	"build_varint": "",
+	"build_varint": "Run",
 	"command_palette":
 	{
-		"height": 167.0,
-		"last_filter": "instal",
+		"height": 127.0,
+		"last_filter": "install",
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
 			[
 				"instal",
 				"Package Control: Install Package"
 			],
 			[
 				"package install",
-				"Package Control: Install Package"
-			],
-			[
-				"package",
-				"Preferences: Browse Packages"
-			],
-			[
-				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -200,7 +228,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 448.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -221,11 +249,12 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/phillipchang/Desktop/Elm/Homework/Week 1",
-		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/build"
+		"/C/Users/Phil/Documents/GitHub/Elm-Homework/Week 1"
 	],
 	"file_history":
 	[
+		"/C/Users/Phil/Documents/GitHub/Elm-Homework/Week 1/elm-package.json",
+		"/C/Users/Phil/Documents/GitHub/Elm-Homework/Week 1/build/test.html",
 		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/FP.elm",
 		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/test.elm",
 		"/Users/phillipchang/Desktop/Elm/Tutorial/Fibonacci.elm",
@@ -277,6 +306,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"}",
 			"Visibility",
 			"type",
 			"sfml_root",
@@ -303,7 +333,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -312,20 +342,50 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 587,
+						"buffer_size": 1824,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								298,
-								298
+								343,
+								343
 							]
 						],
 						"settings":
 						{
 							"auto_name": "",
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 192,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192,
+								192
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -381,7 +441,7 @@
 	{
 		"height": 25.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
 	"project": "week1.sublime-project",
 	"replace":
 	{
@@ -427,7 +487,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 153.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
