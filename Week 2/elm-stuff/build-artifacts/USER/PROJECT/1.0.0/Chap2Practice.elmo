@@ -1,0 +1,37 @@
+Elm.Chap2Practice = Elm.Chap2Practice || {};
+Elm.Chap2Practice.make = function (_elm) {
+   "use strict";
+   _elm.Chap2Practice = _elm.Chap2Practice || {};
+   if (_elm.Chap2Practice.values)
+   return _elm.Chap2Practice.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Chap2Practice",
+   $Basics = Elm.Basics.make(_elm),
+   $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var find = F2(function (x,xs) {
+      return function () {
+         switch (xs.ctor)
+         {case "::": return _U.eq(x,
+              xs._0) ? true : A2(find,
+              x,
+              xs._1);
+            case "[]": return false;}
+         _U.badCase($moduleName,
+         "between lines 8 and 10");
+      }();
+   });
+   var main = $Graphics$Element.show(A2(find,
+   152,
+   _L.range(1,150)));
+   _elm.Chap2Practice.values = {_op: _op
+                               ,find: find
+                               ,main: main};
+   return _elm.Chap2Practice.values;
+};

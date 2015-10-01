@@ -1,0 +1,195 @@
+Elm.Pi = Elm.Pi || {};
+Elm.Pi.make = function (_elm) {
+   "use strict";
+   _elm.Pi = _elm.Pi || {};
+   if (_elm.Pi.values)
+   return _elm.Pi.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Pi",
+   $Basics = Elm.Basics.make(_elm),
+   $Color = Elm.Color.make(_elm),
+   $Graphics$Collage = Elm.Graphics.Collage.make(_elm),
+   $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Random = Elm.Random.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Time = Elm.Time.make(_elm),
+   $Window = Elm.Window.make(_elm);
+   var piApprox = function (_v0) {
+      return function () {
+         switch (_v0.ctor)
+         {case "_Tuple2":
+            switch (_v0._0.ctor)
+              {case "_Tuple2":
+                 switch (_v0._1.ctor)
+                   {case "_Tuple2":
+                      return 4.0 * $Basics.toFloat(_v0._0._0) / ($Basics.toFloat(_v0._0._0) + $Basics.toFloat(_v0._1._0));}
+                   break;}
+              break;}
+         _U.badCase($moduleName,
+         "on line 67, column 5 to 50");
+      }();
+   };
+   var pointsToCircles = F2(function (color,
+   pointlst) {
+      return function () {
+         var drawCircle = function (_v8) {
+            return function () {
+               return $Graphics$Collage.move({ctor: "_Tuple2"
+                                             ,_0: _v8.x
+                                             ,_1: _v8.y})($Graphics$Collage.filled(color)($Graphics$Collage.circle(5)));
+            }();
+         };
+         return A2($List.map,
+         drawCircle,
+         pointlst);
+      }();
+   });
+   var view = F2(function (_v10,
+   _v11) {
+      return function () {
+         switch (_v11.ctor)
+         {case "_Tuple2":
+            switch (_v11._0.ctor)
+              {case "_Tuple2":
+                 switch (_v11._1.ctor)
+                   {case "_Tuple2":
+                      return function () {
+                           switch (_v10.ctor)
+                           {case "_Tuple2":
+                              return A3($Graphics$Collage.collage,
+                                _v10._0,
+                                _v10._1,
+                                A2($List._op["::"],
+                                $Graphics$Collage.move({ctor: "_Tuple2"
+                                                       ,_0: 0
+                                                       ,_1: -120})($Graphics$Collage.toForm($Graphics$Element.show(piApprox({ctor: "_Tuple2"
+                                                                                                                            ,_0: {ctor: "_Tuple2"
+                                                                                                                                 ,_0: _v11._0._0
+                                                                                                                                 ,_1: _v11._0._1}
+                                                                                                                            ,_1: {ctor: "_Tuple2"
+                                                                                                                                 ,_0: _v11._1._0
+                                                                                                                                 ,_1: _v11._1._1}})))),
+                                A2($Basics._op["++"],
+                                A2(pointsToCircles,
+                                A3($Color.rgb,255,0,0),
+                                _v11._0._1),
+                                A2(pointsToCircles,
+                                A3($Color.rgb,0,255,0),
+                                _v11._1._1))));}
+                           _U.badCase($moduleName,
+                           "between lines 50 and 53");
+                        }();}
+                   break;}
+              break;}
+         _U.badCase($moduleName,
+         "between lines 50 and 53");
+      }();
+   });
+   var floatGen = A2($Random.$float,
+   -100,
+   100);
+   var genPoint = function (seed) {
+      return function () {
+         var $ = A2($Random.generate,
+         floatGen,
+         seed),
+         x = $._0,
+         seed2 = $._1;
+         var $ = A2($Random.generate,
+         floatGen,
+         seed2),
+         y = $._0,
+         seed3 = $._1;
+         return {ctor: "_Tuple2"
+                ,_0: {_: {},x: x,y: y}
+                ,_1: seed3};
+      }();
+   };
+   var signalPointSeed = A3($Signal.foldp,
+   F2(function (a,_v22) {
+      return function () {
+         switch (_v22.ctor)
+         {case "_Tuple2":
+            return genPoint(_v22._1);}
+         _U.badCase($moduleName,
+         "on line 41, column 43 to 65");
+      }();
+   }),
+   {ctor: "_Tuple2"
+   ,_0: {_: {},x: 0,y: 0}
+   ,_1: $Random.initialSeed(17)},
+   $Time.every(3.0e-2 * $Time.second));
+   var signalPoint = A2($Signal._op["<~"],
+   $Basics.fst,
+   signalPointSeed);
+   var initState = {ctor: "_Tuple2"
+                   ,_0: {ctor: "_Tuple2"
+                        ,_0: 0
+                        ,_1: _L.fromArray([])}
+                   ,_1: {ctor: "_Tuple2"
+                        ,_0: 0
+                        ,_1: _L.fromArray([])}};
+   var upstate = F2(function (point,
+   _v26) {
+      return function () {
+         switch (_v26.ctor)
+         {case "_Tuple2":
+            switch (_v26._0.ctor)
+              {case "_Tuple2":
+                 switch (_v26._1.ctor)
+                   {case "_Tuple2":
+                      return _U.cmp(Math.pow(point.x,
+                        2) + Math.pow(point.y,2),
+                        10000.0) < 0 ? {ctor: "_Tuple2"
+                                       ,_0: {ctor: "_Tuple2"
+                                            ,_0: _v26._0._0 + 1
+                                            ,_1: A2($List._op["::"],
+                                            point,
+                                            _v26._0._1)}
+                                       ,_1: {ctor: "_Tuple2"
+                                            ,_0: _v26._1._0
+                                            ,_1: _v26._1._1}} : {ctor: "_Tuple2"
+                                                                ,_0: {ctor: "_Tuple2"
+                                                                     ,_0: _v26._0._0
+                                                                     ,_1: _v26._0._1}
+                                                                ,_1: {ctor: "_Tuple2"
+                                                                     ,_0: _v26._1._0 + 1
+                                                                     ,_1: A2($List._op["::"],
+                                                                     point,
+                                                                     _v26._1._1)}};}
+                   break;}
+              break;}
+         _U.badCase($moduleName,
+         "between lines 19 and 21");
+      }();
+   });
+   var main = A3($Signal.map2,
+   view,
+   $Window.dimensions,
+   A3($Signal.foldp,
+   upstate,
+   initState,
+   signalPoint));
+   var Point = F2(function (a,b) {
+      return {_: {},x: a,y: b};
+   });
+   _elm.Pi.values = {_op: _op
+                    ,Point: Point
+                    ,upstate: upstate
+                    ,initState: initState
+                    ,floatGen: floatGen
+                    ,genPoint: genPoint
+                    ,signalPointSeed: signalPointSeed
+                    ,signalPoint: signalPoint
+                    ,view: view
+                    ,pointsToCircles: pointsToCircles
+                    ,piApprox: piApprox
+                    ,main: main};
+   return _elm.Pi.values;
+};

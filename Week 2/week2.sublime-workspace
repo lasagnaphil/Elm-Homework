@@ -12,26 +12,18 @@
 	"buffers":
 	[
 		{
-			"file": "Pi.elm",
+			"file": "practice1.elm",
 			"settings":
 			{
-				"buffer_size": 1465,
+				"buffer_size": 1192,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "FRPTutorial.elm",
+			"file": "practice2.elm",
 			"settings":
 			{
-				"buffer_size": 340,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test.elm",
-			"settings":
-			{
-				"buffer_size": 192,
+				"buffer_size": 632,
 				"line_ending": "Unix"
 			}
 		}
@@ -68,6 +60,22 @@
 			],
 			[
 				"Packages/C++11/C++11.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
 				"Run"
 			]
 		],
@@ -171,16 +179,24 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 167.0,
-		"last_filter": "instal",
+		"height": 387.0,
+		"last_filter": "package control",
 		"selected_items":
 		[
 			[
-				"instal",
-				"Package Control: Install Package"
+				"package control",
+				"Package Control: List Packages"
 			],
 			[
 				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"instal",
 				"Package Control: Install Package"
 			],
 			[
@@ -197,10 +213,6 @@
 			],
 			[
 				"inst",
-				"Package Control: Install Package"
-			],
-			[
-				"insta",
 				"Package Control: Install Package"
 			],
 			[
@@ -237,17 +249,23 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/phillipchang/Desktop/Elm/Homework/Week 1",
-		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/build"
+		"/Users/phillipchang/Desktop/Elm/Homework/Week 2",
+		"/Users/phillipchang/Desktop/Elm/Homework/Week 2/build"
 	],
 	"file_history":
 	[
-		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/FP.elm",
-		"/Users/phillipchang/Desktop/Elm/Homework/Week 1/test.elm",
+		"/Users/phillipchang/Desktop/Elm/Architecture Tutorial/Counter.elm",
+		"/Users/phillipchang/Desktop/Elm/Homework/Week 2/reactivity.elm",
+		"/Users/phillipchang/Desktop/Elm/Homework/Week 2/practice2.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/EyesModel.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/EyesView.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/Eyes.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/WindowSignals.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/MouseSignals.elm",
+		"/Users/phillipchang/Desktop/Elm/Tutorial/elm-package.json",
 		"/Users/phillipchang/Desktop/Elm/Tutorial/Fibonacci.elm",
 		"/Users/phillipchang/Desktop/Elm/Tutorial/FibonacciBars.elm",
 		"/Users/phillipchang/Desktop/Elm/Tutorial/tutorial.sublime-project",
-		"/Users/phillipchang/Desktop/Elm/Tutorial/elm-package.json",
 		"/Users/phillipchang/Desktop/Elm/Tutorial/src/Fibonacci.elm",
 		"/Users/phillipchang/Desktop/Elm/Tutorial/elm.js",
 		"/Users/phillipchang/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
@@ -279,7 +297,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -293,7 +311,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"Time",
 			"Visibility",
 			"type",
 			"sfml_root",
@@ -320,24 +337,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Pi.elm",
+					"file": "practice1.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1465,
+						"buffer_size": 1192,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1152,
-								1152
+								13,
+								13
 							]
 						],
 						"settings":
@@ -348,7 +365,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 91.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -356,55 +373,26 @@
 				},
 				{
 					"buffer": 1,
-					"file": "FRPTutorial.elm",
+					"file": "practice2.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 340,
+						"buffer_size": 632,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								340,
-								340
+								542,
+								542
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "test.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 192,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								192,
-								192
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage"
-						},
-						"translation.x": 64.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -457,8 +445,8 @@
 	{
 		"height": 25.0
 	},
-	"pinned_build_system": "",
-	"project": "week1.sublime-project",
+	"pinned_build_system": "Packages/Elm Language Support/Build Systems/Elm Make.sublime-build",
+	"project": "week2.sublime-project",
 	"replace":
 	{
 		"height": 42.0
@@ -499,7 +487,7 @@
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,

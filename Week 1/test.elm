@@ -1,8 +1,8 @@
 module Test where
 
-import FP exposing (digitsOfInt, additivePersistence, digitalRoot, take)
+import FP exposing (digitsOfInt, additivePersistence, digitalRoot, subsequences, take)
 
 import Graphics.Element exposing (show, Element)
 
 main : Element
-main = show (digitsOfInt 15231253)
+main = show (subsequences [1,2,3,4])
