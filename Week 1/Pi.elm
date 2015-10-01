@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module Pi where
 
 import Signal exposing ((<~), (~))
@@ -68,4 +69,3 @@ piApprox ((n1,list1),(n2,list2)) =
 main : Signal Element
 main =
     Signal.map2 view Window.dimensions
-        (Signal.foldp upstate initState signalPoint)
