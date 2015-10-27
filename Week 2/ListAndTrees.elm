@@ -45,15 +45,15 @@ create2 x m =
     ((balancedTree x (m)), (balancedTree x (m+1)))
 
 -- 2.2.4
-{-
+-- Note: https://wiki.haskell.org/99_questions/Solutions/55
+-- The code below is incorrerct, need help to to accomplish it without list comprehensions
+
 balancedTrees : Int -> Int -> List Tree
-balancedTrees x n =
+balancedTrees =
     let balancedTrees' x n list = if
         | n == 1 -> (Node x Empty Empty)
-        | n%2 == 0 -> (Node x (balancedTree x (n//2) (balancedTree x (n//2)))
-        | otherwise -> case (create2 x ((n-1)//2)) of
-            (t1,t2) -> (Node x t2 t1)
--}
+        | n%2 == 1 -> List.map (\(l,r) -> Node x l r) (balancedTree x (n-1)//2) (balancedTree x (n-1)//2)
+        | otherwise -> List.map (\(l,r) -> Node x l r) (balancedTree x (n-1)//2) (balancedTree x n//2)
 
 -- 2.2.5
 completeTrees : Int -> Int -> List Tree
