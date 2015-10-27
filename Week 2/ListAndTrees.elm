@@ -17,6 +17,7 @@ suffixes list =
 -- Problem 2: Binary Trees
 type Tree = Empty | Node Int Tree Tree
 
+-- 2.2.1
 mem : Int -> Tree -> Bool
 mem x t = case t of
     Empty -> False
@@ -25,26 +26,49 @@ mem x t = case t of
            | x <  y -> mem x left
            | x >  y -> mem x right
 
+-- 2.2.2
 fullTree : Int -> Int -> Tree
 fullTree x h = if
     | h == 1 -> (Node x Empty Empty)
     | otherwise -> (Node x (fullTree x (h-1)) (fullTree x (h-1)))
 
+-- 2.2.3
 balancedTree : Int -> Int -> Tree
 balancedTree x n = if
     | n == 1 -> (Node x Empty Empty)
     | n%2 == 0 -> (Node x (balancedTree x (n//2)) (balancedTree x (n//2)))
-    | otherwise -> case (create2 x ((n-1)//2)) in 
+    | otherwise -> case (create2 x ((n-1)//2)) of
         (t1,t2) -> (Node x t1 t2)
 
 create2 : Int -> Int -> (Tree, Tree)
 create2 x m =
     ((balancedTree x (m)), (balancedTree x (m+1)))
 
+-- 2.2.4
+{-
 balancedTrees : Int -> Int -> List Tree
 balancedTrees x n =
     let balancedTrees' x n list = if
         | n == 1 -> (Node x Empty Empty)
+        | n%2 == 0 -> (Node x (balancedTree x (n//2) (balancedTree x (n//2)))
+        | otherwise -> case (create2 x ((n-1)//2)) of
+            (t1,t2) -> (Node x t2 t1)
+-}
+
+-- 2.2.5
+completeTrees : Int -> Int -> List Tree
+
+
+-- 2.2.6
+almostCompleteTrees : Int -> Int -> List Tree
+
+
+
+
+
+
+
+
 
 main =
     -- E.show suffixes [1..4]
