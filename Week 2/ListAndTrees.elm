@@ -5,15 +5,14 @@ import List exposing ((::))
 import List
 
 -- Problem 1: Lists
-{-
-suffixes : List a -> List (List a)
+-- suffixes : List a -> List (List a)
 suffixes list = 
-    let suffixes' curList list = case curList of
-        [] -> list
-        _::curList' -> suffixes' curList' (list::curList')
+    let suffixes' curList lst = case curList of
+        [] -> lst
+        _::curList' -> suffixes' curList' (lst::curList')
     in
-        suffixes' list [[]]
--}
+        suffixes' list []
+
 -- Problem 2: Binary Trees
 type Tree = Empty | Node Int Tree Tree
 
@@ -46,21 +45,31 @@ create2 x m =
 
 -- 2.2.4
 -- Note: https://wiki.haskell.org/99_questions/Solutions/55
--- The code below is incorrerct, need help to to accomplish it without list comprehensions
 
+{-
 balancedTrees : Int -> Int -> List Tree
-balancedTrees =
-    let balancedTrees' x n list = if
-        | n == 1 -> (Node x Empty Empty)
-        | n%2 == 1 -> List.map (\(l,r) -> Node x l r) (balancedTree x (n-1)//2) (balancedTree x (n-1)//2)
-        | otherwise -> List.map (\(l,r) -> Node x l r) (balancedTree x (n-1)//2) (balancedTree x n//2)
-
+balancedTrees x n =
+    let makeNode l r = (Node x l r)
+        makeNode2 l r = [(Node x l r), (Node x r l)]
+        balancedTrees' x n = 
+        if | n == 1 -> [(Node x Empty Empty)]
+           | n%2 == 1 -> List.map2 (makeNode) (balancedTrees' x (n-1)//2) (balancedTrees' x (n-1)//2)
+           | otherwise -> List.concat [List.map2 (makeNode2) (balancedTrees' x (n-1)//2) (balancedTrees' x n//2)]
+    in
+        balancedTrees' x n 
+-}
 -- 2.2.5
-completeTrees : Int -> Int -> List Tree
-
+-- completeTrees : Int -> Int -> List Tree
+    {-
+completeTrees x n =
+    let makeNode l r = Node x l r
+        makeRows =
+    in
+        List.map2 (++ (fullTree (n-1)) addRows
+    -}
 
 -- 2.2.6
-almostCompleteTrees : Int -> Int -> List Tree
+-- almostCompleteTrees : Int -> Int -> List Tree
 
 
 
@@ -71,5 +80,5 @@ almostCompleteTrees : Int -> Int -> List Tree
 
 
 main =
-    -- E.show suffixes [1..4]
-    E.show (fullTree 0 2)
+    E.show suffixes [1..4]
+    --E.show (List.map (List.length << balancedTrees 0) [0..20])
