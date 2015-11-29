@@ -32,7 +32,7 @@ Elm.Pi.make = function (_elm) {
                    break;}
               break;}
          _U.badCase($moduleName,
-         "on line 67, column 5 to 50");
+         "on line 66, column 5 to 50");
       }();
    };
    var pointsToCircles = F2(function (color,
@@ -83,12 +83,12 @@ Elm.Pi.make = function (_elm) {
                                 A3($Color.rgb,0,255,0),
                                 _v11._1._1))));}
                            _U.badCase($moduleName,
-                           "between lines 50 and 53");
+                           "between lines 49 and 52");
                         }();}
                    break;}
               break;}
          _U.badCase($moduleName,
-         "between lines 50 and 53");
+         "between lines 49 and 52");
       }();
    });
    var floatGen = A2($Random.$float,
@@ -118,7 +118,7 @@ Elm.Pi.make = function (_elm) {
          {case "_Tuple2":
             return genPoint(_v22._1);}
          _U.badCase($moduleName,
-         "on line 41, column 43 to 65");
+         "on line 40, column 43 to 65");
       }();
    }),
    {ctor: "_Tuple2"

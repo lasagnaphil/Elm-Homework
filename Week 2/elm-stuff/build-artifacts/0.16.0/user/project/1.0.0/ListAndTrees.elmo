@@ -1,0 +1,109 @@
+Elm.ListAndTrees = Elm.ListAndTrees || {};
+Elm.ListAndTrees.make = function (_elm) {
+   "use strict";
+   _elm.ListAndTrees = _elm.ListAndTrees || {};
+   if (_elm.ListAndTrees.values) return _elm.ListAndTrees.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var almostCompleteTrees = F2(function (x,n) {    return _U.list([]);});
+   var mem = F2(function (x,t) {
+      mem: while (true) {
+         var _p0 = t;
+         if (_p0.ctor === "Empty") {
+               return false;
+            } else {
+               var _p1 = _p0._0;
+               if (_U.eq(x,_p1)) return true; else if (_U.cmp(x,_p1) < 0) {
+                        var _v1 = x,_v2 = _p0._1;
+                        x = _v1;
+                        t = _v2;
+                        continue mem;
+                     } else {
+                        var _v3 = x,_v4 = _p0._2;
+                        x = _v3;
+                        t = _v4;
+                        continue mem;
+                     }
+            }
+      }
+   });
+   var Node = F3(function (a,b,c) {    return {ctor: "Node",_0: a,_1: b,_2: c};});
+   var cartesian = F3(function (l1,l2,x) {    return A2($List.concatMap,function (a) {    return A2($List.map,A2(Node,x,a),l1);},l2);});
+   var Empty = {ctor: "Empty"};
+   var fullTree = F2(function (x,h) {    return _U.eq(h,1) ? A3(Node,x,Empty,Empty) : A3(Node,x,A2(fullTree,x,h - 1),A2(fullTree,x,h - 1));});
+   var balancedTree = F2(function (x,n) {
+      if (_U.eq(n,1)) return A3(Node,x,Empty,Empty); else if (_U.eq(A2($Basics._op["%"],n,2),0)) return A3(Node,
+            x,
+            A2(balancedTree,x,n / 2 | 0),
+            A2(balancedTree,x,n / 2 | 0)); else {
+               var _p2 = A2(create2,x,(n - 1) / 2 | 0);
+               return A3(Node,x,_p2._0,_p2._1);
+            }
+   });
+   var create2 = F2(function (x,m) {    return {ctor: "_Tuple2",_0: A2(balancedTree,x,m),_1: A2(balancedTree,x,m + 1)};});
+   var balancedTrees = F2(function (x,n) {
+      return _U.eq(n,0) ? _U.list([A3(Node,x,Empty,Empty)]) : _U.eq(A2($Basics._op["%"],n,2),1) ? A3(cartesian,
+      A2(balancedTrees,x,(n - 1) / 2 | 0),
+      A2(balancedTrees,x,(n - 1) / 2 | 0),
+      x) : A2($Basics._op["++"],
+      A3(cartesian,A2(balancedTrees,x,(n - 1) / 2 | 0),A2(balancedTrees,x,n / 2 | 0),x),
+      A3(cartesian,A2(balancedTrees,x,n / 2 | 0),A2(balancedTrees,x,(n - 1) / 2 | 0),x));
+   });
+   var completeTrees = F2(function (x,n) {
+      var addRows = F3(function (tree,j,k) {
+         var _p3 = tree;
+         if (_p3.ctor === "Empty") {
+               return _U.cmp(j,k) < 0 ? A3(Node,x,Empty,Empty) : Empty;
+            } else {
+               return A3(Node,_p3._0,A3(addRows,_p3._1,j,k),A3(addRows,_p3._2,j + 1,k));
+            }
+      });
+      return _U.list([A3(addRows,A2(fullTree,x,n - 1),0,2)]);
+   });
+   var main = $Graphics$Element.show(A2($List.map,function (_p4) {    return $List.length(A2(completeTrees,0,_p4));},_U.range(0,5)));
+   var suffixes_2 = function (xs) {
+      var _p5 = xs;
+      if (_p5.ctor === "[]") {
+            return _U.list([_U.list([])]);
+         } else {
+            return A2($List._op["::"],xs,suffixes_2(_p5._1));
+         }
+   };
+   var suffixes = function (list) {
+      var suffixes$ = F2(function (curList,lst) {
+         suffixes$: while (true) {
+            var _p6 = curList;
+            if (_p6.ctor === "[]") {
+                  return lst;
+               } else {
+                  var _v9 = _p6._1,_v10 = A2($List._op["::"],curList,lst);
+                  curList = _v9;
+                  lst = _v10;
+                  continue suffixes$;
+               }
+         }
+      });
+      return $List.reverse(A2(suffixes$,list,_U.list([])));
+   };
+   return _elm.ListAndTrees.values = {_op: _op
+                                     ,suffixes: suffixes
+                                     ,suffixes_2: suffixes_2
+                                     ,Empty: Empty
+                                     ,Node: Node
+                                     ,mem: mem
+                                     ,fullTree: fullTree
+                                     ,balancedTree: balancedTree
+                                     ,create2: create2
+                                     ,cartesian: cartesian
+                                     ,balancedTrees: balancedTrees
+                                     ,completeTrees: completeTrees
+                                     ,almostCompleteTrees: almostCompleteTrees
+                                     ,main: main};
+};
