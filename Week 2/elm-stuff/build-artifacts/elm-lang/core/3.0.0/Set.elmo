@@ -1,0 +1,248 @@
+Elm.Set = Elm.Set || {};
+Elm.Set.make = function (_elm) {
+   "use strict";
+   _elm.Set = _elm.Set || {};
+   if (_elm.Set.values)
+   return _elm.Set.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Set",
+   $Basics = Elm.Basics.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $List = Elm.List.make(_elm);
+   var foldr = F3(function (f,
+   b,
+   _v0) {
+      return function () {
+         switch (_v0.ctor)
+         {case "Set_elm_builtin":
+            return A3($Dict.foldr,
+              F3(function (k,_v3,b) {
+                 return function () {
+                    return A2(f,k,b);
+                 }();
+              }),
+              b,
+              _v0._0);}
+         _U.badCase($moduleName,
+         "on line 145, column 3 to 35");
+      }();
+   });
+   var foldl = F3(function (f,
+   b,
+   _v5) {
+      return function () {
+         switch (_v5.ctor)
+         {case "Set_elm_builtin":
+            return A3($Dict.foldl,
+              F3(function (k,_v8,b) {
+                 return function () {
+                    return A2(f,k,b);
+                 }();
+              }),
+              b,
+              _v5._0);}
+         _U.badCase($moduleName,
+         "on line 138, column 3 to 35");
+      }();
+   });
+   var toList = function (_v10) {
+      return function () {
+         switch (_v10.ctor)
+         {case "Set_elm_builtin":
+            return $Dict.keys(_v10._0);}
+         _U.badCase($moduleName,
+         "on line 125, column 3 to 14");
+      }();
+   };
+   var size = function (_v13) {
+      return function () {
+         switch (_v13.ctor)
+         {case "Set_elm_builtin":
+            return $Dict.size(_v13._0);}
+         _U.badCase($moduleName,
+         "on line 96, column 3 to 14");
+      }();
+   };
+   var member = F2(function (k,
+   _v16) {
+      return function () {
+         switch (_v16.ctor)
+         {case "Set_elm_builtin":
+            return A2($Dict.member,
+              k,
+              _v16._0);}
+         _U.badCase($moduleName,
+         "on line 89, column 3 to 18");
+      }();
+   });
+   var isEmpty = function (_v19) {
+      return function () {
+         switch (_v19.ctor)
+         {case "Set_elm_builtin":
+            return $Dict.isEmpty(_v19._0);}
+         _U.badCase($moduleName,
+         "on line 82, column 3 to 17");
+      }();
+   };
+   var Set_elm_builtin = function (a) {
+      return {ctor: "Set_elm_builtin"
+             ,_0: a};
+   };
+   var empty = Set_elm_builtin($Dict.empty);
+   var singleton = function (k) {
+      return Set_elm_builtin(A2($Dict.singleton,
+      k,
+      {ctor: "_Tuple0"}));
+   };
+   var insert = F2(function (k,
+   _v22) {
+      return function () {
+         switch (_v22.ctor)
+         {case "Set_elm_builtin":
+            return Set_elm_builtin(A3($Dict.insert,
+              k,
+              {ctor: "_Tuple0"},
+              _v22._0));}
+         _U.badCase($moduleName,
+         "on line 68, column 3 to 40");
+      }();
+   });
+   var fromList = function (xs) {
+      return A3($List.foldl,
+      insert,
+      empty,
+      xs);
+   };
+   var map = F2(function (f,s) {
+      return fromList(A2($List.map,
+      f,
+      toList(s)));
+   });
+   var remove = F2(function (k,
+   _v25) {
+      return function () {
+         switch (_v25.ctor)
+         {case "Set_elm_builtin":
+            return Set_elm_builtin(A2($Dict.remove,
+              k,
+              _v25._0));}
+         _U.badCase($moduleName,
+         "on line 75, column 3 to 37");
+      }();
+   });
+   var union = F2(function (_v28,
+   _v29) {
+      return function () {
+         switch (_v29.ctor)
+         {case "Set_elm_builtin":
+            return function () {
+                 switch (_v28.ctor)
+                 {case "Set_elm_builtin":
+                    return Set_elm_builtin(A2($Dict.union,
+                      _v28._0,
+                      _v29._0));}
+                 _U.badCase($moduleName,
+                 "on line 103, column 3 to 38");
+              }();}
+         _U.badCase($moduleName,
+         "on line 103, column 3 to 38");
+      }();
+   });
+   var intersect = F2(function (_v34,
+   _v35) {
+      return function () {
+         switch (_v35.ctor)
+         {case "Set_elm_builtin":
+            return function () {
+                 switch (_v34.ctor)
+                 {case "Set_elm_builtin":
+                    return Set_elm_builtin(A2($Dict.intersect,
+                      _v34._0,
+                      _v35._0));}
+                 _U.badCase($moduleName,
+                 "on line 110, column 3 to 42");
+              }();}
+         _U.badCase($moduleName,
+         "on line 110, column 3 to 42");
+      }();
+   });
+   var diff = F2(function (_v40,
+   _v41) {
+      return function () {
+         switch (_v41.ctor)
+         {case "Set_elm_builtin":
+            return function () {
+                 switch (_v40.ctor)
+                 {case "Set_elm_builtin":
+                    return Set_elm_builtin(A2($Dict.diff,
+                      _v40._0,
+                      _v41._0));}
+                 _U.badCase($moduleName,
+                 "on line 118, column 3 to 37");
+              }();}
+         _U.badCase($moduleName,
+         "on line 118, column 3 to 37");
+      }();
+   });
+   var filter = F2(function (p,
+   _v46) {
+      return function () {
+         switch (_v46.ctor)
+         {case "Set_elm_builtin":
+            return Set_elm_builtin(A2($Dict.filter,
+              F2(function (k,_v49) {
+                 return function () {
+                    return p(k);
+                 }();
+              }),
+              _v46._0));}
+         _U.badCase($moduleName,
+         "on line 158, column 3 to 49");
+      }();
+   });
+   var partition = F2(function (p,
+   _v51) {
+      return function () {
+         switch (_v51.ctor)
+         {case "Set_elm_builtin":
+            return function () {
+                 var $ = A2($Dict.partition,
+                 F2(function (k,_v54) {
+                    return function () {
+                       return p(k);
+                    }();
+                 }),
+                 _v51._0),
+                 p1 = $._0,
+                 p2 = $._1;
+                 return {ctor: "_Tuple2"
+                        ,_0: Set_elm_builtin(p1)
+                        ,_1: Set_elm_builtin(p2)};
+              }();}
+         _U.badCase($moduleName,
+         "between lines 166 and 169");
+      }();
+   });
+   _elm.Set.values = {_op: _op
+                     ,empty: empty
+                     ,singleton: singleton
+                     ,insert: insert
+                     ,remove: remove
+                     ,isEmpty: isEmpty
+                     ,member: member
+                     ,size: size
+                     ,foldl: foldl
+                     ,foldr: foldr
+                     ,map: map
+                     ,filter: filter
+                     ,partition: partition
+                     ,union: union
+                     ,intersect: intersect
+                     ,diff: diff
+                     ,toList: toList
+                     ,fromList: fromList};
+   return _elm.Set.values;
+};

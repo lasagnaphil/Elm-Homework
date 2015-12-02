@@ -34,7 +34,8 @@ mem x t = case t of
 -- 2.2.2
 fullTree : Int -> Int -> Tree
 fullTree x h =
-    if h == 1 then (Node x Empty Empty)
+    if h < 1 then Empty
+    else if h == 1 then (Node x Empty Empty)
     else (Node x (fullTree x (h-1)) (fullTree x (h-1)))
 
 -- 2.2.3
@@ -67,23 +68,33 @@ balancedTrees x n =
 -- 2.2.5
 completeTrees : Int -> Int -> List Tree
 completeTrees x n =
-    let addRows tree j k = case tree of
-        Empty -> if j < k then (Node x Empty Empty)
-                 else Empty
-        Node x l r -> Node x (addRows l j k) (addRows r (j+1) k)
+    let addRows tree j k =
+        case tree of
+            Empty -> if j < k then (Node x Empty Empty)
+                     else Empty
+            Node x l r -> Node x (addRows l (2*j) k) (addRows r (2*j+1) k)
     in
-        List.map (addRows (fullTree x (n-1)) 0) [0..(2^(n-2)-1)]
+        List.map (addRows (fullTree x (n-1)) 0) [0..(2^(n-1)-1)]
 
 -- 2.2.6
+subsequences : List a -> List (List a)
+subsequences lst =
+    case lst of
+        [] -> [[]]
+        h::t -> let st = subsequences t in
+                    st ++ List.map (\x -> h::x) st
+
+
 almostCompleteTrees : Int -> Int -> List Tree
 almostCompleteTrees x n =
-    []
-    --let makeNode l r = Node x l r
-
-
-
-
-
+    let subseq n = List.drop 1 (List.reverse (subsequences [0..n-1]))
+        addRows tree j indexList  =
+            case tree of
+                Empty -> if (List.member j indexList) == True then (Node x Empty Empty)
+                         else Empty
+                Node x l r -> Node x (addRows l (2*j) indexList) (addRows r (2*j+1) indexList)
+    in
+        List.map (addRows (fullTree x (n-1)) 0) (subseq (2^(n-1)))
 
 
 
@@ -91,4 +102,5 @@ almostCompleteTrees x n =
 
 
 main =
-    E.show (List.map (List.length << completeTrees 0) [0..5])
+    E.show (List.map (List.length << almostCompleteTrees 0) [1..5])
+    --E.show (subsequences [1..3])
